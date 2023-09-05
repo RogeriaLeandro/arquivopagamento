@@ -1,3 +1,4 @@
+br/com/arquivopagamento/rabbitmq/producer/SendMessageControllerProducer.class
 br/com/arquivopagamento/model/MensagemPagamento.class
 br/com/arquivopagamento/rabbitmq/config/QueueConfig.class
 br/com/arquivopagamento/ArquivopagamentoApplication.class
