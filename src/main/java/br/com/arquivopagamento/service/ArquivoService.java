@@ -28,7 +28,7 @@ public class ArquivoService implements CommandLineRunner {
 
         MensagemPagamento mensagem = new MensagemPagamento();
 
-        try (Stream<String> stream = Files.lines(Path.of("boletos/arquivo.txt"))) {
+        try (Stream<String> stream = Files.lines(Path.of("boletos/arquivo.txt")).parallel()) {
             stream.forEach((String line) -> {
 
                 mensagem.setDocumentoAssociado(line.substring(1, 14));
