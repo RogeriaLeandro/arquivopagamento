@@ -1,6 +1,6 @@
 /home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/ArquivopagamentoApplication.java
 /home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/service/ArquivoService.java
-/home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/rabbitmq/config/RabbitConfiguration.java
-/home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/rabbitmq/producer/SendMessageControllerProducer.java
+/home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/rabbitmq/config/ExchangeConfig.java
 /home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/model/MensagemPagamento.java
+/home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/exceptions/MensagemNaoEnviadaAQueue.java
 /home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/rabbitmq/config/QueueConfig.java

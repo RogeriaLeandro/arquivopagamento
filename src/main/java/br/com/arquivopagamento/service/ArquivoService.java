@@ -31,9 +31,11 @@ public class ArquivoService implements CommandLineRunner {
         try (Stream<String> stream = Files.lines(Path.of("boletos/arquivo.txt")).parallel()) {
             stream.forEach((String line) -> {
 
-                mensagem.setDocumentoAssociado(line.substring(1, 14));
-                mensagem.setIdBoleto(line.substring(15, 28));
-                mensagem.setValorBoleto(line.substring(29,48));
+                String documentoAssociado =  line.substring(1, 14);
+                String idBoleto = line.substring(15, 28);
+                String valorBoleto = (line.substring(29,48));
+
+                //settar em mensagem
 
                 String json =  new Gson().toJson(mensagem.toString());
                 rabbitTemplate.convertAndSend("direct-exchange-default", "queue-a-key", json);
@@ -44,4 +46,10 @@ public class ArquivoService implements CommandLineRunner {
                                                                                 + mensagem.getValorBoleto());
         }
     }
+
+
+
+
+
+
 }

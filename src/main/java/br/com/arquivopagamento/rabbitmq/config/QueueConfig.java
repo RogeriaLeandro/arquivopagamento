@@ -9,6 +9,7 @@ public class QueueConfig {
 
     @Bean
     public Queue queue() {
+
         return new Queue("queue", false);
     }
 
