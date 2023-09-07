@@ -7,23 +7,23 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ExchangeConfig {
-
-    @Autowired
-    private Queue queue;
-
-    @Bean
-    public Exchange directExchange() {
-        return ExchangeBuilder
-                .directExchange("direct-exchange-default")
-                .build();
-    }
-
-    @Bean
-    public Binding bindingQueueA() {
-        return BindingBuilder
-                .bind(queue)
-                .to(directExchange())
-                .with("queue-a-key")
-                .noargs();
-    }
+//
+//    @Autowired
+//    private Queue queue;
+//
+//    @Bean
+//    public Exchange directExchange() {
+//        return ExchangeBuilder
+//                .directExchange("direct-exchange-default")
+//                .build();
+//    }
+//
+//    @Bean
+//    public Binding bindingQueueA() {
+//        return BindingBuilder
+//                .bind(queue)
+//                .to(directExchange())
+//                .with("queue-a-key")
+//                .noargs();
+//    }
 }

@@ -3,4 +3,5 @@ br/com/arquivopagamento/service/ArquivoService.class
 br/com/arquivopagamento/rabbitmq/config/ExchangeConfig.class
 br/com/arquivopagamento/rabbitmq/config/QueueConfig.class
 br/com/arquivopagamento/ArquivopagamentoApplication.class
+br/com/arquivopagamento/exceptions/DocumentoInvalidoException.class
 br/com/arquivopagamento/exceptions/MensagemNaoEnviadaAQueue.class

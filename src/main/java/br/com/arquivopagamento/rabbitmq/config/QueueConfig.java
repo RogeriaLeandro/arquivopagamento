@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class QueueConfig {
-
-    @Bean
-    public Queue queue() {
-
-        return new Queue("queue", false);
-    }
+//
+//    @Bean
+//    public Queue queue() {
+//
+//        return new Queue("queue", false);
+//    }
 
 }

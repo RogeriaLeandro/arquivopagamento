@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: br.com.arquivopagamento.ArquivopagamentoApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.844 s <<< FAILURE! - in br.com.arquivopagamento.ArquivopagamentoApplicationTests
-contextLoads  Time elapsed: 0.001 s  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.511 s <<< FAILURE! - in br.com.arquivopagamento.ArquivopagamentoApplicationTests
+contextLoads  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'rabbitTemplate' defined in class path resource [org/springframework/boot/autoconfigure/amqp/RabbitAutoConfiguration$RabbitTemplateConfiguration.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.amqp.rabbit.core.RabbitTemplate] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@55054057]
 Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springframework.amqp.rabbit.core.RabbitTemplate] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@55054057]
