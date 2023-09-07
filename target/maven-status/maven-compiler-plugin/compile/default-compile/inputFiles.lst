@@ -1,3 +1,4 @@
+/home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/exceptions/DocumentoInvalidoException.java
 /home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/ArquivopagamentoApplication.java
 /home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/service/ArquivoService.java
 /home/usuario/Documentos/Prova Técnica/arquivopagamento/src/main/java/br/com/arquivopagamento/rabbitmq/config/ExchangeConfig.java
