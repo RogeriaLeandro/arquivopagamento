@@ -1,12 +1,12 @@
-package br.com.arquivopagamento.rabbitmq.config;
-
-import org.springframework.amqp.core.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
-public class ExchangeConfig {
+//package br.com.arquivopagamento.rabbitmq.config;
+//
+//import org.springframework.amqp.core.*;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.context.annotation.Bean;
+//import org.springframework.context.annotation.Configuration;
+//
+//@Configuration
+//public class ExchangeConfig {
 //
 //    @Autowired
 //    private Queue queue;
@@ -26,4 +26,4 @@ public class ExchangeConfig {
 //                .with("queue-a-key")
 //                .noargs();
 //    }
-}
+//}
