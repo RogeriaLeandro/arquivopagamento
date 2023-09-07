@@ -2,7 +2,7 @@ package br.com.arquivopagamento.service;
 
 import br.com.arquivopagamento.exceptions.DocumentoInvalidoException;
 import br.com.arquivopagamento.exceptions.MensagemNaoEnviadaAQueue;
-import br.com.arquivopagamento.model.MensagemPagamento;
+import br.com.arquivopagamento.model.BoletoPagamentoDTO;
 import br.com.caelum.stella.validation.CNPJValidator;
 import br.com.caelum.stella.validation.CPFValidator;
 import com.google.gson.Gson;
@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -20,17 +20,18 @@ import java.nio.file.Path;
 import java.util.stream.Stream;
 
 @Slf4j
-public class ArquivoService implements CommandLineRunner {
+@Service
+public class ArquivoService {
 
     @Autowired
-    RabbitTemplate rabbitTemplate;
+    private RabbitTemplate rabbitTemplate;
 
     private static Logger logger = LoggerFactory.getLogger(ArquivoService.class);
 
-    @Override
-    public void run(String... args) throws Exception {
 
-        MensagemPagamento mensagem = new MensagemPagamento();
+    public void run() throws Exception {
+
+        var boletoPagamentoDTO = new BoletoPagamentoDTO();
 
         try (Stream<String> stream = Files.lines(Path.of("boletos/arquivo.txt")).parallel()) {
             stream.forEach((String line) -> {
@@ -43,19 +44,18 @@ public class ArquivoService implements CommandLineRunner {
                 this.trataIdBoleto(idBoleto);
                 this.trataValor(valorBoleto);
 
-                mensagem.setDocumentoAssociado(documentoAssociado);
-                mensagem.setIdBoleto(idBoleto);
-                mensagem.setValorBoleto(valorBoleto);
+                boletoPagamentoDTO.setDocumentoAssociado(documentoAssociado);
+                boletoPagamentoDTO.setIdBoleto(idBoleto);
+                boletoPagamentoDTO.setValorBoleto(valorBoleto);
 
-                String json =  new Gson().toJson(mensagem.toString());
-//                rabbitTemplate.convertAndSend("direct-exchange-default", "queue-a-key", json);
+                String json =  new Gson().toJson(boletoPagamentoDTO.toString());
                 rabbitTemplate.convertAndSend("queue", json);
 
-             });
+            });
         } catch (IOException e) {
-            throw new MensagemNaoEnviadaAQueue("Mensagem não enviada(Documento/IdBoleto/ValorBoleto): " + mensagem.getDocumentoAssociado() + " / "
-                                                                                + mensagem.getIdBoleto() + " / "
-                                                                                + mensagem.getValorBoleto());
+            throw new MensagemNaoEnviadaAQueue("Mensagem não enviada(Documento/IdBoleto/ValorBoleto): " + boletoPagamentoDTO.getDocumentoAssociado() + " / "
+                    + boletoPagamentoDTO.getIdBoleto() + " / "
+                    + boletoPagamentoDTO.getValorBoleto());
         }
     }
 
@@ -113,9 +113,5 @@ public class ArquivoService implements CommandLineRunner {
 
         return false;
     }
-
-
-
-
 
 }

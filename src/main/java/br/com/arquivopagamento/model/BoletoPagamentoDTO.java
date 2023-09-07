@@ -1,5 +1,6 @@
 package br.com.arquivopagamento.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 @Getter
@@ -7,10 +8,16 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class MensagemPagamento {
+public class BoletoPagamentoDTO {
 
+    @JsonProperty("documentoAssociado")
     private String documentoAssociado;
+
+    @JsonProperty("idBoleto")
     private String idBoleto;
+
+    @JsonProperty("valorBoleto")
     private String valorBoleto;
+
 
 }
